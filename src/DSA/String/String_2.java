@@ -4,7 +4,7 @@ public class String_2 {
     public static void main(String args[]){
         Scanner sc=new Scanner(System.in);
         String s=sc.nextLine();
-        int n=s.length();
+       // int n=s.length();
         /*  1
         int n=s.length();
         int j=0;
@@ -110,6 +110,60 @@ public class String_2 {
         System.out.print(sb.toString());
 
 */
+  /*  prefix
+
+
+            String[] str={"flower","flow","flight"};
+            Arrays.sort(str);
+            String str1=str[0];
+            String str2=str[str.length-1];
+            int i=0;
+            while(i<str1.length() && i<str2.length()&& str1.charAt(i)==str2.charAt(i)){
+                i++;
+            }
+            String pre=str1.substring(0,i);
+            System.out.print(pre);
+*/
+      /*     // longest substring
+        HashSet<Character> set=new HashSet<>();
+        StringBuilder sb=new StringBuilder();
+        int max=0;
+        for(int i=0;i<s.length();i++){
+            char ch=s.charAt(i);
+            while(set.contains(ch)){
+                char f=sb.charAt(0);
+                set.remove(f);
+                sb.deleteCharAt(0);
+            }
+            set.add(ch);
+            sb.append(ch);
+        }
+        if(sb.length()>max){
+            max=sb.length();
+        }
+
+System.out.print(max);*/
+
+
+      //  s=s.replace("akash","bishwas");
+      //  s=s.substring(0,3);
+      //  s=s.Contains("Akash");
+      //  System.out.print(s);
+
+
+        char ch[]=s.toCharArray();
+        HashMap<Character,Integer> map=new LinkedHashMap<>();
+        for(char num:ch)
+            map.put(num,map.getOrDefault(num,0)+1);
+        for(Map.Entry<Character,Integer> entry: map.entrySet()){
+            if(entry.getValue()==1){
+                System.out.print(entry.getKey());
+                return;
+            }
+        }
+
+
+
 
 
     }
